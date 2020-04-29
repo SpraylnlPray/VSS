@@ -1,10 +1,11 @@
+package com.VSS.udpechoserver;
+
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.util.Arrays;
 
-public class EchoServerUDP {
+public class UDPEchoServer {
     static final int port = 4711;
     static final int length = 256;
 
@@ -18,13 +19,14 @@ public class EchoServerUDP {
                 inPacket.setLength(length);
                 socket.receive(inPacket);
                 byte[] data = inPacket.getData();
-                String text = new String(data);
+                String text = new String(data, 0, inPacket.getLength());
                 System.out.println("Received " + text + " from client");
                 if (data.length == 0) {
                     break;
                 }
                 InetAddress toAddr = inPacket.getAddress();
                 int toPort = inPacket.getPort();
+                data = text.getBytes();
                 DatagramPacket res = new DatagramPacket(data, data.length, toAddr, toPort);
                 socket.send(res);
                 if (text.equals("exit")) {
@@ -37,6 +39,5 @@ public class EchoServerUDP {
         catch (IOException e) {
             System.out.println(e.getMessage());
         }
-
     }
 }

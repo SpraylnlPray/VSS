@@ -1,9 +1,11 @@
+package com.VSS.udpechoclient;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
 
-public class EchoClientUDP {
+public class UDPEchoClient {
     static final int port = 4711;
     public static void main(String[] args) throws IOException {
         try {
@@ -31,6 +33,5 @@ public class EchoClientUDP {
         catch (IOException e) {
             System.out.print(e.getMessage());
         }
-
     }
 }

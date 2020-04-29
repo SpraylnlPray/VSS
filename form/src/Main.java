@@ -23,7 +23,5 @@ public class Main {
                 myClient.setVisible(true);
             }
         });
-
-
     }
 }

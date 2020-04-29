@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UDPEchoClient/UDPEchoClient.iml" filepath="$PROJECT_DIR$/UDPEchoClient/UDPEchoClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/UDPEchoServer/UDPEchoServer.iml" filepath="$PROJECT_DIR$/UDPEchoServer/UDPEchoServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UDPEchoUIClient/UDPEchoUIClient.iml" filepath="$PROJECT_DIR$/UDPEchoUIClient/UDPEchoUIClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/UserEcho/UserEcho.iml" filepath="$PROJECT_DIR$/UserEcho/UserEcho.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/VSS.iml" filepath="$PROJECT_DIR$/.idea/VSS.iml" />
       <module fileurl="file://$PROJECT_DIR$/form/form.iml" filepath="$PROJECT_DIR$/form/form.iml" />
