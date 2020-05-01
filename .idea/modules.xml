@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TCPEchoClient/TCPEchoClient.iml" filepath="$PROJECT_DIR$/TCPEchoClient/TCPEchoClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/TCPEchoServer/TCPEchoServer.iml" filepath="$PROJECT_DIR$/TCPEchoServer/TCPEchoServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TCPEchoUIClient/TCPEchoUIClient.iml" filepath="$PROJECT_DIR$/TCPEchoUIClient/TCPEchoUIClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/UDPEchoClient/UDPEchoClient.iml" filepath="$PROJECT_DIR$/UDPEchoClient/UDPEchoClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/UDPEchoServer/UDPEchoServer.iml" filepath="$PROJECT_DIR$/UDPEchoServer/UDPEchoServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/UDPEchoUIClient/UDPEchoUIClient.iml" filepath="$PROJECT_DIR$/UDPEchoUIClient/UDPEchoUIClient.iml" />

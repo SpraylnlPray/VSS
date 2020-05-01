@@ -10,7 +10,6 @@ public class ChatClient extends JFrame {
     private JButton sendButton;
     private JTextField chatInput;
     private JLabel onlineHeader;
-    private JPanel chatContentPanel;
     private JPanel onlinePanel;
     private JTextArea messageArea;
 
