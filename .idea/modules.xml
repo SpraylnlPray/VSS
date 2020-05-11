@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/TCPChatServer/TCPChatServer.iml" filepath="$PROJECT_DIR$/TCPChatServer/TCPChatServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/TCPEchoClient/TCPEchoClient.iml" filepath="$PROJECT_DIR$/TCPEchoClient/TCPEchoClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/TCPEchoServer/TCPEchoServer.iml" filepath="$PROJECT_DIR$/TCPEchoServer/TCPEchoServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/TCPEchoUIClient/TCPEchoUIClient.iml" filepath="$PROJECT_DIR$/TCPEchoUIClient/TCPEchoUIClient.iml" />

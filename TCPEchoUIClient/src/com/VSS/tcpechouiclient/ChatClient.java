@@ -15,6 +15,7 @@ public class ChatClient extends JFrame {
     private JTextArea messageArea;
     private JPanel onlinePanel;
     private JLabel onlineHeader;
+    private JTextArea onlineArea;
 
     public ChatClient(String server, String usrName, int port) throws IOException {
         add(rootPanel);
@@ -25,27 +26,20 @@ public class ChatClient extends JFrame {
         Socket client = new Socket();
         client.connect(new InetSocketAddress(server, port), 1000);
 
-        Thread clientThread = new Thread(new ReceiveThread(messageArea, client));
-        clientThread.start();
+        Thread receiveThread = new Thread(new ReceiveThread(messageArea, client, onlineArea));
+        receiveThread.start();
         BufferedWriter toServer = new BufferedWriter(new OutputStreamWriter(client.getOutputStream()));
+
+        toServer.write("#lgn " + usrName);
+        toServer.newLine();
+        toServer.flush();
 
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String input = inputField.getText();
                 if (input.length() > 0) {
-                    sendMessage(toServer, input);
-//                    inputField.setText("");
-//                    if (input.equals("exit")) {
-//                        dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
-//                    }
-//                    try {
-//                        toServer.write(input);
-//                        toServer.newLine();
-//                        toServer.flush();
-//                    } catch (IOException ex) {
-//                        System.out.println(ex.getMessage());
-//                    }
+                    sendMessage(toServer, input, usrName);
                 }
             }
         });
@@ -54,30 +48,22 @@ public class ChatClient extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String input = inputField.getText();
                 if (input.length() > 0) {
-                    sendMessage(toServer, input);
-//                    inputField.setText("");
-//                    if (input.equals("exit")) {
-//                        dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
-//                    }
-//                    try {
-//                        toServer.write(input);
-//                        toServer.newLine();
-//                        toServer.flush();
-//                    } catch (IOException ex) {
-//                        System.out.println(ex.getMessage());
-//                    }
+                    sendMessage(toServer, input, usrName);
                 }
             }
         });
     }
 
-    private void sendMessage(BufferedWriter toServer, String input) {
+    private void sendMessage(BufferedWriter toServer, String input, String usrName) {
         inputField.setText("");
-        if (input.equals("exit")) {
-            dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
-        }
         try {
-            toServer.write(input);
+            if (input.equals("exit")) {
+                toServer.write("#ext " + usrName);
+                toServer.newLine();
+                toServer.flush();
+                dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+            }
+            toServer.write(usrName + " " + input);
             toServer.newLine();
             toServer.flush();
         } catch (IOException ex) {
